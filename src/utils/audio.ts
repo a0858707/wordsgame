@@ -1,14 +1,54 @@
 // Web Audio API Sound Synthesizer for Crostic Game
 // Provides crisp, zero-latency micro-interactions and celebration audio
+// Optimized for mobile devices (iOS Safari & Android Chrome)
 
 class SoundEngine {
   private ctx: AudioContext | null = null;
   public enabled: boolean = true;
   public haptics: boolean = true;
+  private isUnlocked: boolean = false;
+
+  constructor() {
+    if (typeof window !== 'undefined') {
+      const unlockHandler = () => {
+        this.unlockAudio();
+      };
+
+      window.addEventListener('touchstart', unlockHandler, { passive: true });
+      window.addEventListener('touchend', unlockHandler, { passive: true });
+      window.addEventListener('pointerdown', unlockHandler, { passive: true });
+      window.addEventListener('click', unlockHandler);
+    }
+  }
+
+  // Unlocks audio context on mobile (iOS Safari requires explicit gesture warmup)
+  public unlockAudio() {
+    this.initContext();
+    if (this.ctx) {
+      if (this.ctx.state === 'suspended') {
+        this.ctx.resume();
+      }
+
+      if (!this.isUnlocked) {
+        try {
+          const buffer = this.ctx.createBuffer(1, 1, 22050);
+          const source = this.ctx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(this.ctx.destination);
+          source.start(0);
+          this.isUnlocked = true;
+        } catch {
+          // ignore
+        }
+      }
+    }
+  }
 
   private initContext() {
     if (!this.ctx && typeof window !== 'undefined') {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      const AudioCtx =
+        window.AudioContext ||
+        (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       if (AudioCtx) {
         this.ctx = new AudioCtx();
       }
@@ -18,7 +58,7 @@ class SoundEngine {
     }
   }
 
-  // Crisp keyboard tap
+  // Crisp keyboard tap (enhanced for phone speakers)
   public playTap() {
     if (!this.enabled) return;
     this.initContext();
@@ -29,17 +69,17 @@ class SoundEngine {
       const gain = this.ctx.createGain();
 
       osc.type = 'triangle';
-      osc.frequency.setValueAtTime(440, this.ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(120, this.ctx.currentTime + 0.04);
+      osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(180, this.ctx.currentTime + 0.05);
 
-      gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.04);
+      gain.gain.setValueAtTime(0.35, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.05);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
 
       osc.start();
-      osc.stop(this.ctx.currentTime + 0.045);
+      osc.stop(this.ctx.currentTime + 0.055);
     } catch {
       // AudioContext policy suppression fallback
     }
@@ -52,7 +92,7 @@ class SoundEngine {
     if (!this.ctx) return;
 
     try {
-      const notes = [523.25, 587.33, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50]; // C5 to C6
+      const notes = [523.25, 587.33, 659.25, 698.46, 783.99, 880.0, 987.77, 1046.5]; // C5 to C6
       const freq = notes[pitchIndex % notes.length];
 
       const osc = this.ctx.createOscillator();
@@ -61,14 +101,14 @@ class SoundEngine {
       osc.type = 'sine';
       osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
 
-      gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.16);
+      gain.gain.setValueAtTime(0.38, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.22);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
 
       osc.start();
-      osc.stop(this.ctx.currentTime + 0.18);
+      osc.stop(this.ctx.currentTime + 0.24);
     } catch {
       // ignore
     }
@@ -81,7 +121,7 @@ class SoundEngine {
     if (!this.ctx) return;
 
     try {
-      const chords = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+      const chords = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
       chords.forEach((freq, idx) => {
         const osc = this.ctx!.createOscillator();
         const gain = this.ctx!.createGain();
@@ -91,14 +131,14 @@ class SoundEngine {
         osc.frequency.setValueAtTime(freq, startTime);
 
         gain.gain.setValueAtTime(0, startTime);
-        gain.gain.linearRampToValueAtTime(0.2, startTime + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.35);
+        gain.gain.linearRampToValueAtTime(0.35, startTime + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.38);
 
         osc.connect(gain);
         gain.connect(this.ctx!.destination);
 
         osc.start(startTime);
-        osc.stop(startTime + 0.38);
+        osc.stop(startTime + 0.4);
       });
     } catch {
       // ignore
@@ -121,14 +161,14 @@ class SoundEngine {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(baseFreq * (1 + i * 0.25), startTime);
 
-        gain.gain.setValueAtTime(0.12, startTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.2);
+        gain.gain.setValueAtTime(0.28, startTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.22);
 
         osc.connect(gain);
         gain.connect(this.ctx.destination);
 
         osc.start(startTime);
-        osc.stop(startTime + 0.22);
+        osc.stop(startTime + 0.25);
       }
     } catch {
       // ignore
@@ -146,17 +186,17 @@ class SoundEngine {
       const gain = this.ctx.createGain();
 
       osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(140, this.ctx.currentTime);
-      osc.frequency.setValueAtTime(110, this.ctx.currentTime + 0.08);
+      osc.frequency.setValueAtTime(180, this.ctx.currentTime);
+      osc.frequency.setValueAtTime(130, this.ctx.currentTime + 0.08);
 
-      gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.2);
+      gain.gain.setValueAtTime(0.3, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.22);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
 
       osc.start();
-      osc.stop(this.ctx.currentTime + 0.22);
+      osc.stop(this.ctx.currentTime + 0.25);
     } catch {
       // ignore
     }
@@ -169,15 +209,14 @@ class SoundEngine {
     if (!this.ctx) return;
 
     try {
-      // Fanfare: G4, C5, E5, G5, C6 (extended festive finish)
       const notes = [
-        { f: 392.00, d: 0.15, offset: 0.0 },
-        { f: 523.25, d: 0.15, offset: 0.14 },
-        { f: 659.25, d: 0.15, offset: 0.28 },
-        { f: 783.99, d: 0.25, offset: 0.42 },
-        { f: 659.25, d: 0.12, offset: 0.70 },
-        { f: 783.99, d: 0.15, offset: 0.84 },
-        { f: 1046.50, d: 0.65, offset: 1.00 },
+        { f: 392.0, d: 0.16, offset: 0.0 },
+        { f: 523.25, d: 0.16, offset: 0.14 },
+        { f: 659.25, d: 0.16, offset: 0.28 },
+        { f: 783.99, d: 0.26, offset: 0.42 },
+        { f: 659.25, d: 0.14, offset: 0.7 },
+        { f: 783.99, d: 0.16, offset: 0.84 },
+        { f: 1046.5, d: 0.75, offset: 1.0 },
       ];
 
       notes.forEach(({ f, d, offset }) => {
@@ -189,7 +228,7 @@ class SoundEngine {
         osc.frequency.setValueAtTime(f, start);
 
         gain.gain.setValueAtTime(0, start);
-        gain.gain.linearRampToValueAtTime(0.28, start + 0.03);
+        gain.gain.linearRampToValueAtTime(0.42, start + 0.03);
         gain.gain.exponentialRampToValueAtTime(0.001, start + d);
 
         osc.connect(gain);
@@ -203,8 +242,8 @@ class SoundEngine {
     }
   }
 
-  // Trigger mobile haptic feedback if enabled
-  public vibrate(pattern: number | number[] = 15) {
+  // Trigger mobile haptic feedback if enabled (Android supported; iOS blocks navigator.vibrate)
+  public vibrate(pattern: number | number[] = 30) {
     if (!this.haptics) return;
     if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
       try {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Volume2, VolumeX, Smartphone, Palette, Globe, RotateCcw } from 'lucide-react';
 import { GameSettings, Language } from '../types';
+import { sound } from '../utils/audio';
 
 interface SettingsModalProps {
   isOpen: boolean;
@@ -140,12 +141,32 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   {settings.language === 'ru' ? 'Звуковые эффекты' : 'Sound Effects'}
                 </span>
               </div>
-              <input
-                type="checkbox"
-                checked={settings.soundEnabled}
-                onChange={(e) => onUpdateSettings({ soundEnabled: e.target.checked })}
-                className="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
-              />
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.unlockAudio();
+                    sound.playVictoryFanfare();
+                    sound.vibrate([30, 50, 30]);
+                  }}
+                  className="text-[11px] font-bold px-2 py-1 rounded-lg bg-indigo-50 dark:bg-slate-800 text-indigo-600 dark:text-cyan-400 hover:bg-indigo-100 transition-colors"
+                >
+                  {settings.language === 'ru' ? 'Тест 🔊' : 'Test 🔊'}
+                </button>
+                <input
+                  type="checkbox"
+                  checked={settings.soundEnabled}
+                  onChange={(e) => onUpdateSettings({ soundEnabled: e.target.checked })}
+                  className="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+              </div>
+            </div>
+
+            {/* Mobile Sound Note */}
+            <div className="px-2 py-1.5 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-300 text-[11px] leading-tight">
+              {settings.language === 'ru'
+                ? '💡 На iPhone звук работает, только если выключен физический беззвучный режим (переключатель Silent на боку телефона).'
+                : '💡 On iPhone, web audio requires the physical Silent Switch on the side of the phone to be turned OFF.'}
             </div>
 
             <div className="flex items-center justify-between p-2 rounded-xl">
