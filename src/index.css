@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+}
+
+/* Notebook Spiral and Paper texture styles matching mockup */
+.notebook-bg {
+  background-color: #fbfbf9;
+  background-image: 
+    linear-gradient(#f0f0eb 1px, transparent 1px),
+    linear-gradient(90deg, #f0f0eb 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.notebook-ruled {
+  background-color: #fcfcf7;
+  background-image: linear-gradient(0deg, #e4e7eb 1px, transparent 1px);
+  background-size: 100% 28px;
+}
+
+.handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+/* Keyframe animations */
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.6)); }
+  50% { transform: scale(1.04); filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.9)); }
+}
+
+@keyframes solvedBounce {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+  60% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-pop-in {
+  animation: popIn 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 1.4s infinite ease-in-out;
+}
+
+.animate-solved-bounce {
+  animation: solvedBounce 0.4s ease-in-out;
+}
+
+/* Custom scrollbar for clues */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
