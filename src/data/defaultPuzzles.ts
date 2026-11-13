@@ -1,6 +1,10 @@
 import { Puzzle } from '../types';
 
 export const DEFAULT_PUZZLES: Puzzle[] = [
+  // =========================================================================
+  // ENGLISH PUZZLES (АНГЛИЙСКИЕ УРОВНИ)
+  // =========================================================================
+
   // --- LEVEL 1: From the original Crostic Notebook Mockup (Image 3) ---
   {
     id: 'crostic_en_1',
@@ -12,8 +16,6 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
     quote: 'BE HAPPY THIS MOMENT',
     author: 'Omar Khayyam',
     fact: 'The full Persian quatrain translates to: "Be happy for this moment. This moment is your life." Omar Khayyam was both a celebrated poet and a pioneer of medieval algebra and astronomy.',
-    // Pre-mapped custom cipher numbers matching the exact notebook screenshot!
-    // B=1, E=2, H=3, A=4, P=5, Y=6, F=7, O=8, R=9, T=10, I=11, S=12, M=13, N=14
     customCipher: {
       'B': 1,
       'E': 2,
@@ -32,41 +34,41 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
     },
     clues: [
       {
-        id: 'c1',
+        id: 'c1_1',
         clue: 'Not girls',
         answer: 'BOY',
         icon: '👦',
-        category: 'People'
+        category: 'People',
       },
       {
-        id: 'c2',
+        id: 'c1_2',
         clue: '"___ Alone" film 1990',
         answer: 'HOME',
         icon: '🏠',
-        category: 'Cinema'
+        category: 'Cinema',
       },
       {
-        id: 'c3',
+        id: 'c1_3',
         clue: 'Ache, hurt (syn.)',
         answer: 'PAIN',
         icon: '🦷',
-        category: 'Health'
+        category: 'Health',
       },
       {
-        id: 'c4',
+        id: 'c1_4',
         clue: 'Be afraid of (n.)',
         answer: 'FEAR',
         icon: '😨',
-        category: 'Emotions'
+        category: 'Emotions',
       },
       {
-        id: 'c5',
+        id: 'c1_5',
         clue: 'The science of numbers',
         answer: 'MATH',
         icon: '🔢',
-        category: 'Science'
+        category: 'Science',
       },
-    ]
+    ],
   },
 
   // --- LEVEL 2: From the Crostic Mobile App Mockup (Image 3) ---
@@ -86,40 +88,40 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
         clue: 'Seventh month',
         answer: 'JULY',
         icon: '☀️',
-        category: 'Calendar'
+        category: 'Calendar',
       },
       {
         id: 'c2_2',
         clue: 'Without difficulty',
         answer: 'SIMPLY',
         icon: '✨',
-        category: 'Language'
+        category: 'Language',
       },
       {
         id: 'c2_3',
         clue: 'Win __, lose __',
         answer: 'SOME',
         icon: '🎲',
-        category: 'Proverb'
+        category: 'Proverb',
       },
       {
         id: 'c2_4',
         clue: 'Follower of here or there',
         answer: 'UPON',
         icon: '📍',
-        category: 'Grammar'
+        category: 'Grammar',
       },
       {
         id: 'c2_5',
         clue: 'A settled quantity or allowance',
         answer: 'SIZE',
         icon: '📏',
-        category: 'Measurement'
-      }
-    ]
+        category: 'Measurement',
+      },
+    ],
   },
 
-  // --- LEVEL 3: Classic Curiosity ---
+  // --- LEVEL 3: Endless Horizon ---
   {
     id: 'crostic_en_3',
     levelNumber: 3,
@@ -133,43 +135,57 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
     clues: [
       {
         id: 'c3_1',
-        clue: 'Earth\'s natural satellite',
+        clue: "Earth's natural satellite",
         answer: 'MOON',
         icon: '🌕',
-        category: 'Astronomy'
+        category: 'Astronomy',
       },
       {
         id: 'c3_2',
         clue: 'Deep affection or fondness',
         answer: 'LOVE',
         icon: '❤️',
-        category: 'Emotions'
+        category: 'Emotions',
       },
       {
         id: 'c3_3',
         clue: 'Water frozen solid',
         answer: 'ICE',
         icon: '🧊',
-        category: 'Nature'
+        category: 'Nature',
       },
       {
         id: 'c3_4',
         clue: 'Spring blooming flower',
         answer: 'ROSE',
         icon: '🌹',
-        category: 'Botany'
+        category: 'Botany',
       },
       {
         id: 'c3_5',
         clue: 'To produce music with vocal cords',
         answer: 'SING',
         icon: '🎵',
-        category: 'Arts'
-      }
-    ]
+        category: 'Arts',
+      },
+      {
+        id: 'c3_6',
+        clue: 'Opposite of stop',
+        answer: 'GO',
+        icon: '🟢',
+        category: 'Action',
+      },
+      {
+        id: 'c3_7',
+        clue: 'Baby dog',
+        answer: 'PUPPY',
+        icon: '🐶',
+        category: 'Animals',
+      },
+    ],
   },
 
-  // --- LEVEL 4: Timeless Knowledge ---
+  // --- LEVEL 4: Secret of Power ---
   {
     id: 'crostic_en_4',
     levelNumber: 4,
@@ -186,40 +202,400 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
         clue: 'Opposite of white',
         answer: 'BLACK',
         icon: '⚫',
-        category: 'Colors'
+        category: 'Colors',
       },
       {
         id: 'c4_2',
         clue: 'To move swiftly on foot',
         answer: 'RUN',
         icon: '🏃',
-        category: 'Action'
+        category: 'Action',
       },
       {
         id: 'c4_3',
         clue: 'Time between sunset and sunrise',
         answer: 'NIGHT',
         icon: '🌙',
-        category: 'Time'
+        category: 'Time',
       },
       {
         id: 'c4_4',
         clue: 'Fast aerodynamic aircraft',
         answer: 'PLANE',
         icon: '✈️',
-        category: 'Travel'
+        category: 'Travel',
       },
       {
         id: 'c4_5',
         clue: 'Sweet honey producer insect',
         answer: 'BEE',
         icon: '🐝',
-        category: 'Animals'
-      }
-    ]
+        category: 'Animals',
+      },
+      {
+        id: 'c4_6',
+        clue: 'Heavy metal lock opening tool',
+        answer: 'KEY',
+        icon: '🔑',
+        category: 'Items',
+      },
+    ],
   },
 
-  // ================= RUSSIAN PUZZLES (РУССКИЕ УРОВНИ) =================
+  // --- LEVEL 5: Courage & Destiny ---
+  {
+    id: 'crostic_en_5',
+    levelNumber: 5,
+    title: 'Brave Heart',
+    category: 'Ancient Wisdom',
+    language: 'en',
+    difficulty: 'medium',
+    quote: 'FORTUNE FAVORS THE BOLD',
+    author: 'Virgil',
+    fact: 'The Latin proverb "Audentes fortuna iuvat" appears in Virgil\'s epic Aeneid, shouted by Turnus to inspire his warriors.',
+    clues: [
+      {
+        id: 'c5_1',
+        clue: 'Yellow sour citrus fruit',
+        answer: 'LEMON',
+        icon: '🍋',
+        category: 'Food',
+      },
+      {
+        id: 'c5_2',
+        clue: 'Opposite of beginning',
+        answer: 'END',
+        icon: '🏁',
+        category: 'General',
+      },
+      {
+        id: 'c5_3',
+        clue: 'Green lawn covering plant',
+        answer: 'GRASS',
+        icon: '🌿',
+        category: 'Nature',
+      },
+      {
+        id: 'c5_4',
+        clue: 'To glide through air on wings',
+        answer: 'FLY',
+        icon: '🦅',
+        category: 'Nature',
+      },
+      {
+        id: 'c5_5',
+        clue: 'Floating vessel on water',
+        answer: 'BOAT',
+        icon: '⛵',
+        category: 'Travel',
+      },
+      {
+        id: 'c5_6',
+        clue: 'Building where people live',
+        answer: 'HOUSE',
+        icon: '🏡',
+        category: 'Home',
+      },
+      {
+        id: 'c5_7',
+        clue: 'Decorative flower container',
+        answer: 'VASE',
+        icon: '🏺',
+        category: 'Home',
+      },
+    ],
+  },
+
+  // --- LEVEL 6: Design & Simplicity ---
+  {
+    id: 'crostic_en_6',
+    levelNumber: 6,
+    title: 'The Art of Design',
+    category: 'Creativity',
+    language: 'en',
+    difficulty: 'hard',
+    quote: 'SIMPLICITY IS ULTIMATE SOPHISTICATION',
+    author: 'Leonardo da Vinci',
+    fact: 'This timeless Renaissance principle was later adopted by Steve Jobs as the foundational design philosophy for Apple computers.',
+    clues: [
+      {
+        id: 'c6_1',
+        clue: 'Red salad fruit mistaken for vegetable',
+        answer: 'TOMATO',
+        icon: '🍅',
+        category: 'Food',
+      },
+      {
+        id: 'c6_2',
+        clue: 'Keyboard instrument with 88 black and white keys',
+        answer: 'PIANO',
+        icon: '🎹',
+        category: 'Music',
+      },
+      {
+        id: 'c6_3',
+        clue: 'Fastest ocean predator with dorsal fin',
+        answer: 'SHARK',
+        icon: '🦈',
+        category: 'Ocean',
+      },
+      {
+        id: 'c6_4',
+        clue: 'Coldest snowy season',
+        answer: 'WINTER',
+        icon: '❄️',
+        category: 'Seasons',
+      },
+      {
+        id: 'c6_5',
+        clue: 'Steep rock face at the edge of the sea',
+        answer: 'CLIFF',
+        icon: '🧗',
+        category: 'Geography',
+      },
+      {
+        id: 'c6_6',
+        clue: 'The planet closest to the Sun',
+        answer: 'MERCURY',
+        icon: '🪐',
+        category: 'Space',
+      },
+    ],
+  },
+
+  // --- LEVEL 7: Middle-earth Lore ---
+  {
+    id: 'crostic_en_7',
+    levelNumber: 7,
+    title: 'The Wandering King',
+    category: 'Literature & Fantasy',
+    language: 'en',
+    difficulty: 'medium',
+    quote: 'NOT ALL THOSE WHO WANDER ARE LOST',
+    author: 'J.R.R. Tolkien',
+    fact: 'Composed by Bilbo Baggins for Aragorn in "The Fellowship of the Ring", describing how the royal heir walked disguised as a humble ranger.',
+    clues: [
+      {
+        id: 'c7_1',
+        clue: 'Frozen cubes in a beverage',
+        answer: 'ICE',
+        icon: '🧊',
+        category: 'Drinks',
+      },
+      {
+        id: 'c7_2',
+        clue: 'Golden king of beasts',
+        answer: 'LION',
+        icon: '🦁',
+        category: 'Animals',
+      },
+      {
+        id: 'c7_3',
+        clue: 'Nocturnal flying mammal',
+        answer: 'BAT',
+        icon: '🦇',
+        category: 'Nature',
+      },
+      {
+        id: 'c7_4',
+        clue: 'Warm soothing brewed beverage',
+        answer: 'TEA',
+        icon: '🍵',
+        category: 'Drinks',
+      },
+      {
+        id: 'c7_5',
+        clue: 'Fragrant thorned romantic flower',
+        answer: 'ROSE',
+        icon: '🌹',
+        category: 'Flowers',
+      },
+      {
+        id: 'c7_6',
+        clue: 'To move feet rhythmically to music',
+        answer: 'DANCE',
+        icon: '💃',
+        category: 'Arts',
+      },
+      {
+        id: 'c7_7',
+        clue: 'Huge gray mammal with ivory tusks',
+        answer: 'ELEPHANT',
+        icon: '🐘',
+        category: 'Wildlife',
+      },
+    ],
+  },
+
+  // --- LEVEL 8: Life & Love ---
+  {
+    id: 'crostic_en_8',
+    levelNumber: 8,
+    title: 'Beacon of Light',
+    category: 'Peace & Wisdom',
+    language: 'en',
+    difficulty: 'medium',
+    quote: 'WHERE THERE IS LOVE THERE IS LIFE',
+    author: 'Mahatma Gandhi',
+    fact: 'Gandhi pioneered Satyagraha (truth and nonviolent resistance), transforming political protest into a spiritual force for peace.',
+    clues: [
+      {
+        id: 'c8_1',
+        clue: 'Opposite of heavy or dark',
+        answer: 'LIGHT',
+        icon: '💡',
+        category: 'General',
+      },
+      {
+        id: 'c8_2',
+        clue: 'Color of emeralds and shamrocks',
+        answer: 'GREEN',
+        icon: '🟢',
+        category: 'Colors',
+      },
+      {
+        id: 'c8_3',
+        clue: 'Sweet confection from cacao beans',
+        answer: 'CHOCOLATE',
+        icon: '🍫',
+        category: 'Sweets',
+      },
+      {
+        id: 'c8_4',
+        clue: 'Wise night bird that hoots',
+        answer: 'OWL',
+        icon: '🦉',
+        category: 'Birds',
+      },
+      {
+        id: 'c8_5',
+        clue: 'Morning droplets on morning grass',
+        answer: 'DEW',
+        icon: '💧',
+        category: 'Weather',
+      },
+    ],
+  },
+
+  // --- LEVEL 9: Power of Mind ---
+  {
+    id: 'crostic_en_9',
+    levelNumber: 9,
+    title: 'The Imperial Mind',
+    category: 'History & Leadership',
+    language: 'en',
+    difficulty: 'medium',
+    quote: 'IMAGINATION RULES THE WORLD',
+    author: 'Napoleon Bonaparte',
+    fact: 'Napoleon noted that humanity is fundamentally led not by pure force, but by grand narrative, morale, symbols, and shared vision.',
+    clues: [
+      {
+        id: 'c9_1',
+        clue: 'Twinkling celestial light in the night sky',
+        answer: 'STAR',
+        icon: '⭐',
+        category: 'Sky',
+      },
+      {
+        id: 'c9_2',
+        clue: 'Golden sweet syrup from beehives',
+        answer: 'HONEY',
+        icon: '🍯',
+        category: 'Food',
+      },
+      {
+        id: 'c9_3',
+        clue: 'Picture captured with a lens',
+        answer: 'PHOTO',
+        icon: '📷',
+        category: 'Media',
+      },
+      {
+        id: 'c9_4',
+        clue: 'Striped jungle predator',
+        answer: 'TIGER',
+        icon: '🐯',
+        category: 'Animals',
+      },
+      {
+        id: 'c9_5',
+        clue: 'Water drops falling from storm clouds',
+        answer: 'RAIN',
+        icon: '🌧️',
+        category: 'Weather',
+      },
+      {
+        id: 'c9_6',
+        clue: 'Glowing hot coal remnant of fire',
+        answer: 'EMBER',
+        icon: '🔥',
+        category: 'Elements',
+      },
+    ],
+  },
+
+  // --- LEVEL 10: The Grand Voyage ---
+  {
+    id: 'crostic_en_10',
+    levelNumber: 10,
+    title: 'The Great Journey',
+    category: 'Eastern Wisdom',
+    language: 'en',
+    difficulty: 'hard',
+    quote: 'THE JOURNEY OF A THOUSAND MILES',
+    author: 'Lao Tzu',
+    fact: 'From the Tao Te Ching: "A journey of a thousand miles begins with a single step" (千里之行，始於足下), reminding us that all great feats begin modestly.',
+    clues: [
+      {
+        id: 'c10_1',
+        clue: 'Daylight star warming the planet',
+        answer: 'SUN',
+        icon: '☀️',
+        category: 'Sky',
+      },
+      {
+        id: 'c10_2',
+        clue: 'Small babbling stream of water',
+        answer: 'BROOK',
+        icon: '🏞️',
+        category: 'Nature',
+      },
+      {
+        id: 'c10_3',
+        clue: 'First morning glow before sunrise',
+        answer: 'DAWN',
+        icon: '🌅',
+        category: 'Time',
+      },
+      {
+        id: 'c10_4',
+        clue: 'Sweet celebratory dessert with candles',
+        answer: 'CAKE',
+        icon: '🎂',
+        category: 'Food',
+      },
+      {
+        id: 'c10_5',
+        clue: 'Tall forest perennial with trunk and branches',
+        answer: 'TREE',
+        icon: '🌲',
+        category: 'Botany',
+      },
+      {
+        id: 'c10_6',
+        clue: 'Fluffy white vapor mass in the sky',
+        answer: 'CLOUD',
+        icon: '☁️',
+        category: 'Sky',
+      },
+    ],
+  },
+
+  // =========================================================================
+  // RUSSIAN PUZZLES (РУССКИЕ УРОВНИ)
+  // =========================================================================
+
+  // --- РУССКИЙ УРОВЕНЬ 1: Народная Мудрость ---
   {
     id: 'crostic_ru_1',
     levelNumber: 1,
@@ -236,52 +612,54 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
         clue: 'Естественный спутник Земли',
         answer: 'ЛУНА',
         icon: '🌙',
-        category: 'Космос'
+        category: 'Космос',
       },
       {
         id: 'ru1_2',
         clue: 'Время суток после заката солнца',
         answer: 'НОЧЬ',
         icon: '🌌',
-        category: 'Время'
+        category: 'Время',
       },
       {
         id: 'ru1_3',
-        clue: 'Теплый головной убор',
+        clue: 'Теплый головной убор от холода',
         answer: 'ШАПКА',
         icon: '🧢',
-        category: 'Одежда'
+        category: 'Одежда',
       },
       {
         id: 'ru1_4',
         clue: 'Холодное время года со снегом',
         answer: 'ЗИМА',
         icon: '❄️',
-        category: 'Сезоны'
+        category: 'Сезоны',
       },
       {
         id: 'ru1_5',
         clue: 'Сладкая лесная или садовая ягода',
         answer: 'МАЛИНА',
         icon: '🫐',
-        category: 'Природа'
+        category: 'Природа',
       },
       {
         id: 'ru1_6',
         clue: 'Высокая каменная возвышенность',
         answer: 'ГОРА',
         icon: '⛰️',
-        category: 'География'
+        category: 'География',
       },
       {
         id: 'ru1_7',
         clue: 'Небольшой искусственный водоем',
         answer: 'ПРУД',
         icon: '🌊',
-        category: 'Природа'
-      }
-    ]
+        category: 'Природа',
+      },
+    ],
   },
+
+  // --- РУССКИЙ УРОВЕНЬ 2: Великая Классика ---
   {
     id: 'crostic_ru_2',
     levelNumber: 2,
@@ -298,45 +676,47 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
         clue: 'Орган зрения человека и животных',
         answer: 'ГЛАЗА',
         icon: '👁️',
-        category: 'Анатомия'
+        category: 'Анатомия',
       },
       {
         id: 'ru2_2',
         clue: 'Морской разбойник и корсар',
         answer: 'ПИРАТ',
         icon: '🏴‍☠️',
-        category: 'История'
+        category: 'История',
       },
       {
         id: 'ru2_3',
         clue: 'Царь зверей с пышной гривой',
         answer: 'ЛЕВ',
         icon: '🦁',
-        category: 'Животные'
+        category: 'Животные',
       },
       {
         id: 'ru2_4',
         clue: 'Праздничный сладкий десерт со свечами',
         answer: 'ТОРТ',
         icon: '🎂',
-        category: 'Кулинария'
+        category: 'Кулинария',
       },
       {
         id: 'ru2_5',
         clue: 'Красный корнеплод для борща',
         answer: 'СВЕКЛА',
         icon: '🥗',
-        category: 'Кулинария'
+        category: 'Кулинария',
       },
       {
         id: 'ru2_6',
         clue: 'Сумка для путешествий с колесиками',
         answer: 'ЧЕМОДАН',
         icon: '🧳',
-        category: 'Путешествия'
-      }
-    ]
+        category: 'Путешествия',
+      },
+    ],
   },
+
+  // --- РУССКИЙ УРОВЕНЬ 3: Сила Разума ---
   {
     id: 'crostic_ru_3',
     levelNumber: 3,
@@ -353,46 +733,445 @@ export const DEFAULT_PUZZLES: Puzzle[] = [
         clue: 'Музыкальный инструмент со струнами',
         answer: 'ГИТАРА',
         icon: '🎸',
-        category: 'Музыка'
+        category: 'Музыка',
       },
       {
         id: 'ru3_2',
         clue: 'Белый пушистый зимний осадок',
         answer: 'СНЕГ',
         icon: '❄️',
-        category: 'Погода'
+        category: 'Погода',
       },
       {
         id: 'ru3_3',
         clue: 'Столица Франции',
         answer: 'ПАРИЖ',
         icon: '🗼',
-        category: 'Города'
+        category: 'Города',
       },
       {
         id: 'ru3_4',
-        clue: 'Время года, когда тает снег и поют птицы',
+        clue: 'Время года, когда тает снег и цветут сады',
         answer: 'ВЕСНА',
         icon: '🌷',
-        category: 'Сезоны'
+        category: 'Сезоны',
       },
       {
         id: 'ru3_5',
         clue: 'Главнокомандующий на корабле',
         answer: 'КАПИТАН',
         icon: '⚓',
-        category: 'Профессии'
-      }
-    ]
-  }
+        category: 'Профессии',
+      },
+    ],
+  },
+
+  // --- РУССКИЙ УРОВЕНЬ 4: Осторожность ---
+  {
+    id: 'crostic_ru_4',
+    levelNumber: 4,
+    title: 'Путь к Цели',
+    category: 'Пословицы',
+    language: 'ru',
+    difficulty: 'easy',
+    quote: 'ТИШЕ ЕДЕШЬ ДАЛЬШЕ БУДЕШЬ',
+    author: 'Народная пословица',
+    fact: 'Пословица учит осмотрительности и терпению: спешка часто приводит к досадным ошибкам, а размеренное и вдумчивое движение всегда приводит к намеченной цели.',
+    clues: [
+      {
+        id: 'ru4_1',
+        clue: 'Дерево с белоснежной корой',
+        answer: 'БЕРЕЗА',
+        icon: '🌳',
+        category: 'Природа',
+      },
+      {
+        id: 'ru4_2',
+        clue: 'Теплая одежда для рук зимой',
+        answer: 'ВАРЕЖКИ',
+        icon: '🧤',
+        category: 'Одежда',
+      },
+      {
+        id: 'ru4_3',
+        clue: 'Водный транспорт с веслами',
+        answer: 'ЛОДКА',
+        icon: '🛶',
+        category: 'Транспорт',
+      },
+      {
+        id: 'ru4_4',
+        clue: 'Домашнее пушистое мурлыкающее животное',
+        answer: 'КОШКА',
+        icon: '🐱',
+        category: 'Животные',
+      },
+      {
+        id: 'ru4_5',
+        clue: 'Ночная птица с большими круглыми глазами',
+        answer: 'СОВА',
+        icon: '🦉',
+        category: 'Птицы',
+      },
+      {
+        id: 'ru4_6',
+        clue: 'Сладкая лесная ароматная ягодка',
+        answer: 'ЗЕМЛЯНИКА',
+        icon: '🍓',
+        category: 'Природа',
+      },
+    ],
+  },
+
+  // --- РУССКИЙ УРОВЕНЬ 5: Вечное Обучение ---
+  {
+    id: 'crostic_ru_5',
+    levelNumber: 5,
+    title: 'Урок длиною в Жизнь',
+    category: 'Афоризмы',
+    language: 'ru',
+    difficulty: 'medium',
+    quote: 'ВЕК ЖИВИ ВЕК УЧИСЬ',
+    author: 'Сенека',
+    fact: 'Полная цитата римского философа Сенеки звучит так: "Век живи — век учись тому, как следует жить" (Epistulae morales ad Lucilium).',
+    clues: [
+      {
+        id: 'ru5_1',
+        clue: 'Самое теплое солнечное время года',
+        answer: 'ЛЕТО',
+        icon: '☀️',
+        category: 'Сезоны',
+      },
+      {
+        id: 'ru5_2',
+        clue: 'Зимний белый пушистый покров',
+        answer: 'СНЕГ',
+        icon: '❄️',
+        category: 'Погода',
+      },
+      {
+        id: 'ru5_3',
+        clue: 'Хищная зубастая речная рыба',
+        answer: 'ЩУКА',
+        icon: '🐟',
+        category: 'Природа',
+      },
+      {
+        id: 'ru5_4',
+        clue: 'Ароматный бодрящий горячий напиток',
+        answer: 'КОФЕ',
+        icon: '☕',
+        category: 'Напитки',
+      },
+      {
+        id: 'ru5_5',
+        clue: 'Музыкальный кнопочный инструмент с мехами',
+        answer: 'БАЯН',
+        icon: '🪗',
+        category: 'Музыка',
+      },
+      {
+        id: 'ru5_6',
+        clue: 'Яркий красный полевой цветок',
+        answer: 'МАК',
+        icon: '🌺',
+        category: 'Цветы',
+      },
+    ],
+  },
+
+  // --- РУССКИЙ УРОВЕНЬ 6: Сказочная Мудрость ---
+  {
+    id: 'crostic_ru_6',
+    levelNumber: 6,
+    title: 'Сказочный Совет',
+    category: 'Фольклор',
+    language: 'ru',
+    difficulty: 'easy',
+    quote: 'УТРО ВЕЧЕРА МУДРЕНЕЕ',
+    author: 'Русские сказки',
+    fact: 'Эту фразу Василиса Премудрая говорила Ивану-царевичу, зная, что сон восстанавливает силы, а отдохнувший ум находит решения, казавшиеся невозможными вечером.',
+    clues: [
+      {
+        id: 'ru6_1',
+        clue: 'Удобная мягкая одежда для сна',
+        answer: 'ПИЖАМА',
+        icon: '🛌',
+        category: 'Одежда',
+      },
+      {
+        id: 'ru6_2',
+        clue: 'Орган слуха на голове',
+        answer: 'УХО',
+        icon: '👂',
+        category: 'Анатомия',
+      },
+      {
+        id: 'ru6_3',
+        clue: 'Главная река Санкт-Петербурга',
+        answer: 'НЕВА',
+        icon: '🌉',
+        category: 'География',
+      },
+      {
+        id: 'ru6_4',
+        clue: 'Пелена от костра или печи',
+        answer: 'ДЫМ',
+        icon: '💨',
+        category: 'Природа',
+      },
+      {
+        id: 'ru6_5',
+        clue: 'Зеленый хрустящий овощ для салата',
+        answer: 'ОГУРЕЦ',
+        icon: '🥒',
+        category: 'Овощи',
+      },
+      {
+        id: 'ru6_6',
+        clue: 'Дикий лесной свирепый кабан',
+        answer: 'ВЕПРЬ',
+        icon: '🐗',
+        category: 'Животные',
+      },
+    ],
+  },
+
+  // --- РУССКИЙ УРОВЕНЬ 7: Решимость ---
+  {
+    id: 'crostic_ru_7',
+    levelNumber: 7,
+    title: 'Победа над Страхом',
+    category: 'Пословицы',
+    language: 'ru',
+    difficulty: 'medium',
+    quote: 'ГЛАЗА БОЯТСЯ А РУКИ ДЕЛАЮТ',
+    author: 'Народная пословица',
+    fact: 'Древняя житейская мудрость: даже самое трудное дело перестает казаться непреодолимым, как только человек от сомнений переходит к реальным действиям.',
+    clues: [
+      {
+        id: 'ru7_1',
+        clue: 'Жилище эскимосов из плотного снега',
+        answer: 'ИГЛУ',
+        icon: '🛖',
+        category: 'Жилище',
+      },
+      {
+        id: 'ru7_2',
+        clue: 'Сладкий золотистый продукт пчел',
+        answer: 'МЕД',
+        icon: '🍯',
+        category: 'Кулинария',
+      },
+      {
+        id: 'ru7_3',
+        clue: 'Ночное небесное светило',
+        answer: 'ЛУНА',
+        icon: '🌙',
+        category: 'Космос',
+      },
+      {
+        id: 'ru7_4',
+        clue: 'Капли воды с грозовых туч',
+        answer: 'ДОЖДЬ',
+        icon: '🌧️',
+        category: 'Погода',
+      },
+      {
+        id: 'ru7_5',
+        clue: 'Сладкая домашняя выпечка с яблоками',
+        answer: 'ПИРОГ',
+        icon: '🥧',
+        category: 'Кулинария',
+      },
+      {
+        id: 'ru7_6',
+        clue: 'Подземная часть дерева или растения',
+        answer: 'КОРЕНЬ',
+        icon: '🌱',
+        category: 'Ботаника',
+      },
+    ],
+  },
+
+  // --- РУССКИЙ УРОВЕНЬ 8: Дружба и Ценности ---
+  {
+    id: 'crostic_ru_8',
+    levelNumber: 8,
+    title: 'Истинное Богатство',
+    category: 'Пословицы',
+    language: 'ru',
+    difficulty: 'hard',
+    quote: 'НЕ ИМЕЙ СТО РУБЛЕЙ А ИМЕЙ СТО ДРУЗЕЙ',
+    author: 'Народная мудрость',
+    fact: 'Ценность крепкой бескорыстной дружбы всегда ставилась выше материального достатка — верный товарищ поддержит в любой беде, где деньги бессильны.',
+    clues: [
+      {
+        id: 'ru8_1',
+        clue: 'Пышный сладкий корж для торта',
+        answer: 'БИСКВИТ',
+        icon: '🍰',
+        category: 'Десерты',
+      },
+      {
+        id: 'ru8_2',
+        clue: 'Оранжевый круглый сочный цитрус',
+        answer: 'АПЕЛЬСИН',
+        icon: '🍊',
+        category: 'Фрукты',
+      },
+      {
+        id: 'ru8_3',
+        clue: 'Благородный лесной зверь с ветвистыми рогами',
+        answer: 'ОЛЕНЬ',
+        icon: '🦌',
+        category: 'Животные',
+      },
+      {
+        id: 'ru8_4',
+        clue: 'Гигантское водное пространство Земли',
+        answer: 'ОКЕАН',
+        icon: '🌊',
+        category: 'География',
+      },
+      {
+        id: 'ru8_5',
+        clue: 'Столица Российской Федерации',
+        answer: 'МОСКВА',
+        icon: '🏰',
+        category: 'Города',
+      },
+      {
+        id: 'ru8_6',
+        clue: 'Пряная освежающая зеленая трава для чая',
+        answer: 'МЯТА',
+        icon: '🌿',
+        category: 'Растения',
+      },
+    ],
+  },
+
+  // --- РУССКИЙ УРОВЕНЬ 9: Философия Счастья ---
+  {
+    id: 'crostic_ru_9',
+    levelNumber: 9,
+    title: 'Гармония Души',
+    category: 'Философия',
+    language: 'ru',
+    difficulty: 'medium',
+    quote: 'СЧАСТЬЕ ЕСТЬ ДЕЙСТВИЕ ДУШИ',
+    author: 'Аристотель',
+    fact: 'В трактате "Никомахова этика" Аристотель объясняет, что счастье (эвдемония) — это не пассивный покой или удовольствия, а активное раскрытие внутреннего потенциала и добродетелей.',
+    clues: [
+      {
+        id: 'ru9_1',
+        clue: 'Светящаяся точка в ночном небе',
+        answer: 'ЗВЕЗДА',
+        icon: '⭐',
+        category: 'Космос',
+      },
+      {
+        id: 'ru9_2',
+        clue: 'Большое концертное фортепиано с крылом',
+        answer: 'РОЯЛЬ',
+        icon: '🎹',
+        category: 'Музыка',
+      },
+      {
+        id: 'ru9_3',
+        clue: 'Утренняя домашняя птица с гребешком',
+        answer: 'ПЕТУХ',
+        icon: '🐓',
+        category: 'Птицы',
+      },
+      {
+        id: 'ru9_4',
+        clue: 'Хвойное вечнозеленое лесное дерево',
+        answer: 'СОСНА',
+        icon: '🌲',
+        category: 'Природа',
+      },
+      {
+        id: 'ru9_5',
+        clue: 'Темно-красная сочная ягода с косточкой',
+        answer: 'ВИШНЯ',
+        icon: '🍒',
+        category: 'Ягоды',
+      },
+      {
+        id: 'ru9_6',
+        clue: 'Великая русская река, впадающая в Каспий',
+        answer: 'ВОЛГА',
+        icon: '🌊',
+        category: 'География',
+      },
+    ],
+  },
+
+  // --- РУССКИЙ УРОВЕНЬ 10: Торжество Разума ---
+  {
+    id: 'crostic_ru_10',
+    levelNumber: 10,
+    title: 'Формула Мысли',
+    category: 'Философия и Наука',
+    language: 'ru',
+    difficulty: 'hard',
+    quote: 'Я МЫСЛЮ СЛЕДОВАТЕЛЬНО Я СУЩЕСТВУЮ',
+    author: 'Рене Декарт',
+    fact: 'Знаменитый афоризм "Cogito, ergo sum" из трактата Декарта 1637 года стал отправной точкой новоевропейского рационализма и научной революции.',
+    clues: [
+      {
+        id: 'ru10_1',
+        clue: 'Цвет чистого дневного неба и морской волны',
+        answer: 'СИНИЙ',
+        icon: '🔵',
+        category: 'Цвета',
+      },
+      {
+        id: 'ru10_2',
+        clue: 'Главный парный орган дыхания человека',
+        answer: 'ЛЕГКИЕ',
+        icon: '🫁',
+        category: 'Анатомия',
+      },
+      {
+        id: 'ru10_3',
+        clue: 'Крупный полосатый хищник из семейства кошачьих',
+        answer: 'ТИГР',
+        icon: '🐅',
+        category: 'Животные',
+      },
+      {
+        id: 'ru10_4',
+        clue: 'Крутая каменная возвышенность или обрыв',
+        answer: 'СКАЛА',
+        icon: '⛰️',
+        category: 'Природа',
+      },
+      {
+        id: 'ru10_5',
+        clue: 'Сладкое холодное сливочное лакомство',
+        answer: 'МОРОЖЕНОЕ',
+        icon: '🍦',
+        category: 'Десерты',
+      },
+      {
+        id: 'ru10_6',
+        clue: 'Появление первых утренних лучей солнца',
+        answer: 'РАССВЕТ',
+        icon: '🌅',
+        category: 'Время',
+      },
+    ],
+  },
 ];
 
 export function getPuzzleById(id: string): Puzzle | undefined {
-  return DEFAULT_PUZZLES.find(p => p.id === id);
+  return DEFAULT_PUZZLES.find((p) => p.id === id);
 }
 
 export function getPuzzlesByLanguage(lang: 'en' | 'ru'): Puzzle[] {
-  return DEFAULT_PUZZLES.filter(p => p.language === lang);
+  return DEFAULT_PUZZLES.filter((p) => p.language === lang);
 }
 
 /**
@@ -403,7 +1182,7 @@ export function getDailyPuzzle(date: Date = new Date()): Puzzle {
   const day = date.getDate();
   const index = day % DEFAULT_PUZZLES.length;
   const base = DEFAULT_PUZZLES[index];
-  
+
   return {
     ...base,
     id: `daily_${dateStr}`,
