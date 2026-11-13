@@ -6,7 +6,17 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
   }
+}
+
+/* Safe area padding utilities for mobile phones */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 12px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 /* Notebook Spiral and Paper texture styles matching mockup */

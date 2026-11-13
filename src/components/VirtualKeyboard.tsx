@@ -39,7 +39,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
 
   return (
     <div
-      className={`w-full max-w-2xl mx-auto p-1.5 sm:p-2.5 rounded-t-2xl sm:rounded-2xl transition-all shadow-lg ${
+      className={`w-full max-w-2xl mx-auto px-1 sm:px-2.5 pt-1.5 sm:pt-2.5 pb-safe sm:pb-2.5 rounded-t-2xl sm:rounded-2xl transition-all shadow-lg ${
         isDark
           ? 'bg-slate-900/95 border-t sm:border border-slate-800'
           : isNotebook
@@ -47,9 +47,9 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
           : 'bg-white/95 border-t sm:border border-slate-200/90 shadow-sm backdrop-blur-md'
       }`}
     >
-      <div className="flex flex-col gap-1 sm:gap-1.5 items-center">
+      <div className="flex flex-col gap-1 sm:gap-1.5 items-center w-full">
         {/* Row 1 */}
-        <div className="flex gap-1 sm:gap-1.5 justify-center w-full">
+        <div className="flex gap-0.5 sm:gap-1.5 justify-center w-full">
           {layout[0].map((char) => (
             <KeyButton
               key={char}
@@ -62,7 +62,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
         </div>
 
         {/* Row 2 */}
-        <div className="flex gap-1 sm:gap-1.5 justify-center w-full px-2 sm:px-4">
+        <div className="flex gap-0.5 sm:gap-1.5 justify-center w-full px-1 sm:px-4">
           {layout[1].map((char) => (
             <KeyButton
               key={char}
@@ -75,12 +75,12 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
         </div>
 
         {/* Row 3 with Hint & Backspace */}
-        <div className="flex gap-1 sm:gap-1.5 justify-center w-full">
+        <div className="flex gap-0.5 sm:gap-1.5 justify-center w-full">
           {/* Hint Bulb Button */}
           <button
             onClick={onHintClick}
             type="button"
-            className={`relative flex items-center justify-center gap-1 px-2.5 sm:px-3 h-10 sm:h-12 rounded-lg font-bold transition-all active:scale-90 cursor-pointer shadow-xs ${
+            className={`relative flex items-center justify-center gap-0.5 sm:gap-1 px-2 sm:px-3 h-10 sm:h-12 rounded-lg font-bold transition-all active:scale-90 cursor-pointer shadow-xs shrink-0 ${
               isDark
                 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30'
                 : 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200'
@@ -88,7 +88,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
             title={`Hint (${hintCost} coins)`}
           >
             <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500 animate-pulse" />
-            <span className="text-[10px] sm:text-xs font-black bg-amber-500 text-white rounded-full px-1.5 py-0.2">
+            <span className="text-[9px] sm:text-xs font-black bg-amber-500 text-white rounded-full px-1 sm:px-1.5 py-0.2">
               {hintCost}
             </span>
           </button>
@@ -108,7 +108,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
           <button
             onClick={onBackspace}
             type="button"
-            className={`flex items-center justify-center px-2.5 sm:px-3.5 h-10 sm:h-12 rounded-lg font-bold transition-all active:scale-90 cursor-pointer shadow-xs ${
+            className={`flex items-center justify-center px-2 sm:px-3.5 h-10 sm:h-12 rounded-lg font-bold transition-all active:scale-90 cursor-pointer shadow-xs shrink-0 ${
               isDark
                 ? 'bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700'
                 : isNotebook
@@ -137,7 +137,7 @@ const KeyButton: React.FC<KeyButtonProps> = ({ char, onClick, isDark, isNotebook
     <button
       onClick={onClick}
       type="button"
-      className={`flex-1 min-w-[24px] max-w-[42px] h-10 sm:h-12 rounded-lg font-extrabold text-sm sm:text-base flex items-center justify-center transition-all duration-100 active:scale-95 cursor-pointer shadow-xs select-none ${
+      className={`flex-1 min-w-[20px] max-w-[42px] h-10 sm:h-12 rounded-lg font-extrabold text-xs sm:text-base flex items-center justify-center transition-all duration-100 active:scale-95 cursor-pointer shadow-xs select-none touch-manipulation ${
         isDark
           ? 'bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 active:bg-slate-600'
           : isNotebook

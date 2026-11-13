@@ -37,9 +37,9 @@ export const QuoteBoard: React.FC<QuoteBoardProps> = ({
           : 'bg-white/95 border border-slate-200 shadow-sm backdrop-blur-sm'
       }`}
     >
-      <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-4 py-1">
+      <div className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-6 gap-y-2.5 sm:gap-y-4 py-1">
         {words.map((word, wordIdx) => (
-          <div key={`word-${wordIdx}`} className="flex items-center gap-1 sm:gap-1.5 flex-nowrap">
+          <div key={`word-${wordIdx}`} className="flex items-center gap-0.5 sm:gap-1.5 flex-nowrap">
             {word.split('').map((char, charIdx) => {
               const currentGlobalIdx = globalIndex++;
 
@@ -48,7 +48,7 @@ export const QuoteBoard: React.FC<QuoteBoardProps> = ({
                 return (
                   <div
                     key={`punc-${wordIdx}-${charIdx}`}
-                    className={`flex items-end pb-1.5 px-0.5 font-bold text-lg sm:text-xl ${
+                    className={`flex items-end pb-1.5 px-0.5 font-bold text-base sm:text-xl ${
                       isDark ? 'text-slate-400' : isNotebook ? 'text-amber-900 handwritten text-2xl' : 'text-slate-500'
                     }`}
                   >
@@ -69,9 +69,9 @@ export const QuoteBoard: React.FC<QuoteBoardProps> = ({
                   key={`tile-${wordIdx}-${charIdx}-${currentGlobalIdx}`}
                   onClick={() => onSelectNumber(num, 'quote', undefined, currentGlobalIdx)}
                   type="button"
-                  className={`group relative flex flex-col items-center justify-between rounded-lg sm:rounded-xl transition-all duration-150 cursor-pointer select-none ${
-                    // Tile box dimensions: responsive for mobile and desktop
-                    'w-7 h-11 sm:w-10 sm:h-14 md:w-11 md:h-15'
+                  className={`group relative flex flex-col items-center justify-between rounded-md sm:rounded-xl transition-all duration-150 cursor-pointer select-none touch-manipulation ${
+                    // Tile box dimensions: auto-scale for ultra-compact mobile and desktop
+                    'w-[26px] h-10 min-w-[24px] sm:w-10 sm:h-14 md:w-11 md:h-15'
                   } ${
                     isActive
                       ? isDark
