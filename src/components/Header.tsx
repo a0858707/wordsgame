@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
   const isNotebook = theme === 'notebook';
 
   return (
-    <header className={`w-full px-3 py-2 sm:px-4 sm:py-3 transition-colors duration-200 border-b ${
+    <header className={`w-full pt-safe px-3 pb-2 sm:px-4 sm:py-3 transition-colors duration-200 border-b select-none ${
       isDark 
         ? 'bg-slate-900/95 border-slate-800 text-white' 
         : isNotebook

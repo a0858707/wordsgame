@@ -581,7 +581,7 @@ export const App: React.FC = () => {
 
   return (
     <div
-      className={`min-h-screen flex flex-col justify-between transition-colors duration-200 ${
+      className={`h-[100dvh] w-full flex flex-col justify-between overflow-hidden transition-colors duration-200 ${
         isDark
           ? 'bg-slate-950 text-slate-100'
           : isNotebook
