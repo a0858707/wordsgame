@@ -1,17 +1,17 @@
 # 🎯 Linear Tasks & Changelog: Crostic Word & Cryptogram Game
 
-## 📌 Epic: Crostic — Word & Cryptogram Crossword Puzzle Game
-- **Project**: Crostic / Wordsgame
+## 📌 Linear Project: [Crostic — Word & Cryptogram Crossword Game](https://linear.app/alex-bg/project/crostic-word-and-cryptogram-crossword-game-4c4946b9f18d)
+- **Linear Project URL**: [https://linear.app/alex-bg/project/crostic-word-and-cryptogram-crossword-game-4c4946b9f18d](https://linear.app/alex-bg/project/crostic-word-and-cryptogram-crossword-game-4c4946b9f18d)
 - **Status**: Completed / Done ✅
 - **Priority**: High 🔴
-- **Platforms**: Mobile Web (iOS Safari, Android Chrome), PWA Standalone, Native iOS (Xcode / Capacitor)
+- **Team**: Alex bg (`ALE`)
 - **Live Demo**: [https://a0858707.github.io/wordsgame/](https://a0858707.github.io/wordsgame/)
 - **Repository**: [https://github.com/a0858707/wordsgame](https://github.com/a0858707/wordsgame)
 
 ---
 
 ### Task 1: Core Gameplay & Bidirectional Substitution Cipher Engine
-- **ID**: `CRO-1`
+- **Linear Issue**: [ALE-39](https://linear.app/alex-bg/issue/ALE-39/core-gameplay-engine-and-bidirectional-substitution-cipher)
 - **Status**: Completed ✅
 - **Description**:
   - Implemented mathematical substitution cryptogram cipher engine (`src/utils/cipher.ts`).
@@ -24,7 +24,7 @@
 ---
 
 ### Task 2: Level Library & Automated Verification (60 Handcrafted Levels)
-- **ID**: `CRO-2`
+- **Linear Issue**: [ALE-40](https://linear.app/alex-bg/issue/ALE-40/level-library-and-solvability-verification-60-handcrafted-levels)
 - **Status**: Completed ✅
 - **Description**:
   - Built 60 handcrafted levels (30 English + 30 Russian).
@@ -36,7 +36,7 @@
 ---
 
 ### Task 3: Game Modes (Daily Challenge & Custom Puzzle Creator)
-- **ID**: `CRO-3`
+- **Linear Issue**: [ALE-41](https://linear.app/alex-bg/issue/ALE-41/game-modes-daily-challenge-and-custom-puzzle-creator)
 - **Status**: Completed ✅
 - **Description**:
   - **Daily Challenge mode**: 365 unique daily puzzles with calendar date format, streak tracker (🔥), and daily trophy collector (🏆).
@@ -46,7 +46,7 @@
 ---
 
 ### Task 4: UI/UX Themes, Sound Engine & Power-ups
-- **ID**: `CRO-4`
+- **Linear Issue**: [ALE-42](https://linear.app/alex-bg/issue/ALE-42/uiux-themes-sound-synthesizer-and-visual-juice)
 - **Status**: Completed ✅
 - **Description**:
   - **3 Visual Themes**:
@@ -66,7 +66,7 @@
 ---
 
 ### Task 5: Mobile & iPhone PWA Standalone Adaptation
-- **ID**: `CRO-5`
+- **Linear Issue**: [ALE-43](https://linear.app/alex-bg/issue/ALE-43/mobile-and-iphone-standalone-pwa-adaptation)
 - **Status**: Completed ✅
 - **Description**:
   - Full PWA configuration (`public/manifest.json`, Apple Touch Icons, `apple-mobile-web-app-capable`).
@@ -79,7 +79,7 @@
 ---
 
 ### Task 6: GitHub Deployment & Xcode Native iOS Integration
-- **ID**: `CRO-6`
+- **Linear Issue**: [ALE-44](https://linear.app/alex-bg/issue/ALE-44/github-deployment-and-xcode-native-ios-integration)
 - **Status**: Completed ✅
 - **Description**:
   - Created public GitHub repository and pushed all code (`https://github.com/a0858707/wordsgame`).

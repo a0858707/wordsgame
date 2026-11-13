@@ -1,0 +1,62 @@
+{
+  "project": {
+    "id": "c981f441-cb9c-4792-9160-b825f95dc62d",
+    "url": "https://linear.app/alex-bg/project/crostic-word-and-cryptogram-crossword-game-4c4946b9f18d"
+  },
+  "issues": [
+    {
+      "id": "7b7fe963-35ac-4071-ac53-639b262e3c1e",
+      "identifier": "ALE-39",
+      "title": "Core Gameplay Engine & Bidirectional Substitution Cipher",
+      "url": "https://linear.app/alex-bg/issue/ALE-39/core-gameplay-engine-and-bidirectional-substitution-cipher",
+      "state": {
+        "name": "Done"
+      }
+    },
+    {
+      "id": "6f360e3b-ee0b-4dd2-b829-024528ac2733",
+      "identifier": "ALE-40",
+      "title": "Level Library & Solvability Verification (60 Handcrafted Levels)",
+      "url": "https://linear.app/alex-bg/issue/ALE-40/level-library-and-solvability-verification-60-handcrafted-levels",
+      "state": {
+        "name": "Done"
+      }
+    },
+    {
+      "id": "21c9798c-bcb3-4f67-9b86-55b50f7a7c38",
+      "identifier": "ALE-41",
+      "title": "Game Modes: Daily Challenge & Custom Puzzle Creator",
+      "url": "https://linear.app/alex-bg/issue/ALE-41/game-modes-daily-challenge-and-custom-puzzle-creator",
+      "state": {
+        "name": "Done"
+      }
+    },
+    {
+      "id": "1e04df63-8bd1-4320-8b1f-287782f38e2a",
+      "identifier": "ALE-42",
+      "title": "UI/UX Themes, Sound Synthesizer & Visual Juice",
+      "url": "https://linear.app/alex-bg/issue/ALE-42/uiux-themes-sound-synthesizer-and-visual-juice",
+      "state": {
+        "name": "Done"
+      }
+    },
+    {
+      "id": "b91530e7-4c3a-4594-909c-a4b387160cd0",
+      "identifier": "ALE-43",
+      "title": "Mobile & iPhone Standalone PWA Adaptation",
+      "url": "https://linear.app/alex-bg/issue/ALE-43/mobile-and-iphone-standalone-pwa-adaptation",
+      "state": {
+        "name": "Done"
+      }
+    },
+    {
+      "id": "21affa10-8a2c-4211-8406-dacd05741390",
+      "identifier": "ALE-44",
+      "title": "GitHub Deployment & Xcode Native iOS Integration",
+      "url": "https://linear.app/alex-bg/issue/ALE-44/github-deployment-and-xcode-native-ios-integration",
+      "state": {
+        "name": "Done"
+      }
+    }
+  ]
+}
