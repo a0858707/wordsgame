@@ -2,7 +2,11 @@
 
 Полная реализация популярной игры-головоломки **Crostic** (акростихи и криптограммы со скрытыми фразами и цитатами) в соответствии со всеми требованиями ТЗ и скриншотами.
 
-![Crostic Preview](public/preview.png)
+🌐 **Прямая ссылка для игры онлайн (GitHub Pages)**:  
+👉 **[https://a0858707.github.io/wordsgame/](https://a0858707.github.io/wordsgame/)**
+
+📦 **GitHub Репозиторий**:  
+👉 **[https://github.com/a0858707/wordsgame](https://github.com/a0858707/wordsgame)**
 
 ---
 
