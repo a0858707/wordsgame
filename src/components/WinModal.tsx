@@ -94,7 +94,7 @@ export const WinModal: React.FC<WinModalProps> = ({
         </div>
 
         <h2 className="text-2xl sm:text-3xl font-black tracking-tight mb-1">
-          {puzzle.language === 'ru' ? 'Блестяще решено!' : 'Mystery Solved!'}
+          Mystery Solved!
         </h2>
         <p className="text-xs sm:text-sm font-semibold opacity-70 mb-4">
           {puzzle.category} • {formatTime(timeSpent)}
@@ -125,7 +125,7 @@ export const WinModal: React.FC<WinModalProps> = ({
           }`}
         >
           <div className="text-xs font-bold uppercase tracking-wider text-indigo-500 dark:text-cyan-400 mb-1">
-            {puzzle.language === 'ru' ? 'Расшифрованная фраза:' : 'Decoded Phrase:'}
+            Decoded Phrase:
           </div>
           <p className="text-lg sm:text-xl font-black tracking-wide leading-relaxed text-indigo-950 dark:text-white">
             "{puzzle.quote}"
@@ -148,9 +148,7 @@ export const WinModal: React.FC<WinModalProps> = ({
           >
             <BookOpen className="w-5 h-5 shrink-0 text-amber-600 dark:text-cyan-400 mt-0.5" />
             <div className="text-xs sm:text-sm leading-relaxed">
-              <span className="font-bold block mb-0.5">
-                {puzzle.language === 'ru' ? 'Любопытный факт:' : 'Fascinating Fact:'}
-              </span>
+              <span className="font-bold block mb-0.5">Fascinating Fact:</span>
               {puzzle.fact}
             </div>
           </div>
@@ -158,7 +156,7 @@ export const WinModal: React.FC<WinModalProps> = ({
 
         {/* Reward Coins */}
         <div className="flex items-center gap-2 mb-6 font-extrabold text-sm sm:text-base">
-          <span>{puzzle.language === 'ru' ? 'Награда:' : 'Reward:'}</span>
+          <span>Reward:</span>
           <span className="px-3 py-1 bg-amber-500/20 text-amber-600 dark:text-amber-300 rounded-full border border-amber-500/30 flex items-center gap-1.5">
             <span>🪙</span>
             <span>+{coinsEarned} coins</span>
@@ -171,7 +169,7 @@ export const WinModal: React.FC<WinModalProps> = ({
             onClick={onNextLevel}
             className="flex-1 py-3.5 px-6 rounded-2xl font-black text-base sm:text-lg bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/30 hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>{puzzle.language === 'ru' ? 'Следующий уровень' : 'Next Level'}</span>
+            <span>Next Level</span>
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>

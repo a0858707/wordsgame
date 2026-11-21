@@ -58,9 +58,7 @@ export const DailyModal: React.FC<DailyModalProps> = ({
           <Calendar className="w-8 h-8" />
         </div>
 
-        <h3 className="font-black text-2xl mb-1">
-          {language === 'ru' ? 'Ежедневный вызов' : 'Daily Challenge'}
-        </h3>
+        <h3 className="font-black text-2xl mb-1">Daily Challenge</h3>
         <p className="text-xs sm:text-sm font-semibold opacity-70 capitalize mb-5">
           {dateFormatted}
         </p>
@@ -76,9 +74,7 @@ export const DailyModal: React.FC<DailyModalProps> = ({
               <Flame className="w-6 h-6 fill-amber-500" />
               <span>{streak}</span>
             </div>
-            <span className="text-[11px] font-bold opacity-70">
-              {language === 'ru' ? 'Дней подряд' : 'Day Streak'}
-            </span>
+            <span className="text-[11px] font-bold opacity-70">Day Streak</span>
           </div>
 
           <div
@@ -90,9 +86,7 @@ export const DailyModal: React.FC<DailyModalProps> = ({
               <Trophy className="w-6 h-6" />
               <span>{isCompletedToday ? '1/1' : '0/1'}</span>
             </div>
-            <span className="text-[11px] font-bold opacity-70">
-              {language === 'ru' ? 'Сегодняшний трофей' : 'Today Trophy'}
-            </span>
+            <span className="text-[11px] font-bold opacity-70">Today Trophy</span>
           </div>
         </div>
 
@@ -102,7 +96,7 @@ export const DailyModal: React.FC<DailyModalProps> = ({
             isDark ? 'bg-slate-800/80 border-slate-700' : 'bg-slate-50 border-slate-200'
           }`}
         >
-          <span>{language === 'ru' ? 'Награда за победу:' : 'Victory Reward:'}</span>
+          <span>Victory Reward:</span>
           <span className="text-amber-500 font-black">+50 🪙 & 🏆 Trophy</span>
         </div>
 
@@ -121,12 +115,12 @@ export const DailyModal: React.FC<DailyModalProps> = ({
           {isCompletedToday ? (
             <>
               <CheckCircle className="w-5 h-5" />
-              <span>{language === 'ru' ? 'Пройдено (Играть снова)' : 'Completed (Replay)'}</span>
+              <span>Completed (Play Again)</span>
             </>
           ) : (
             <>
               <Play className="w-5 h-5 fill-current" />
-              <span>{language === 'ru' ? 'Начать испытание' : 'Start Challenge'}</span>
+              <span>Start Challenge</span>
             </>
           )}
         </button>

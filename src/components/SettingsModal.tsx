@@ -36,9 +36,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       >
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-4">
-          <h3 className="font-extrabold text-xl sm:text-2xl">
-            {settings.language === 'ru' ? 'Настройки' : 'Settings'}
-          </h3>
+          <h3 className="font-extrabold text-xl sm:text-2xl">Settings</h3>
           <button
             onClick={onClose}
             className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -52,7 +50,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <div>
             <label className="text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5 opacity-80">
               <Palette className="w-4 h-4" />
-              <span>{settings.language === 'ru' ? 'Тема оформления' : 'Game Theme'}</span>
+              <span>Game Theme</span>
             </label>
             <div className="grid grid-cols-3 gap-2">
               <button
@@ -100,7 +98,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <div>
             <label className="text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5 opacity-80">
               <Globe className="w-4 h-4" />
-              <span>{settings.language === 'ru' ? 'Язык игры и уровней' : 'Puzzle Language'}</span>
+              <span>Puzzle Language</span>
             </label>
             <div className="grid grid-cols-2 gap-2">
               <button
@@ -123,7 +121,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     : 'border-slate-200 dark:border-slate-700'
                 }`}
               >
-                🇷🇺 Русский
+                🇷🇺 Russian
               </button>
             </div>
           </div>
@@ -137,9 +135,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 ) : (
                   <VolumeX className="w-5 h-5 opacity-50" />
                 )}
-                <span className="text-sm font-bold">
-                  {settings.language === 'ru' ? 'Звуковые эффекты' : 'Sound Effects'}
-                </span>
+                <span className="text-sm font-bold">Sound Effects</span>
               </div>
               <div className="flex items-center gap-2">
                 <button
@@ -147,11 +143,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   onClick={() => {
                     sound.unlockAudio();
                     sound.playVictoryFanfare();
-                    sound.vibrate([30, 50, 30]);
+                    sound.hapticSuccess();
                   }}
                   className="text-[11px] font-bold px-2 py-1 rounded-lg bg-indigo-50 dark:bg-slate-800 text-indigo-600 dark:text-cyan-400 hover:bg-indigo-100 transition-colors"
                 >
-                  {settings.language === 'ru' ? 'Тест 🔊' : 'Test 🔊'}
+                  Test 🔊
                 </button>
                 <input
                   type="checkbox"
@@ -162,19 +158,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               </div>
             </div>
 
-            {/* Mobile Sound Note */}
-            <div className="px-2 py-1.5 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-300 text-[11px] leading-tight">
-              {settings.language === 'ru'
-                ? '💡 На iPhone звук работает, только если выключен физический беззвучный режим (переключатель Silent на боку телефона).'
-                : '💡 On iPhone, web audio requires the physical Silent Switch on the side of the phone to be turned OFF.'}
-            </div>
-
             <div className="flex items-center justify-between p-2 rounded-xl">
               <div className="flex items-center gap-2.5">
                 <Smartphone className="w-5 h-5 text-indigo-600 dark:text-cyan-400" />
-                <span className="text-sm font-bold">
-                  {settings.language === 'ru' ? 'Вибрация / Тактильный отклик' : 'Haptic Vibrations'}
-                </span>
+                <span className="text-sm font-bold">Haptic Feedback (Taptic Engine)</span>
               </div>
               <input
                 type="checkbox"
@@ -187,9 +174,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             <div className="flex items-center justify-between p-2 rounded-xl">
               <div className="flex items-center gap-2.5">
                 <span>✨</span>
-                <span className="text-sm font-bold">
-                  {settings.language === 'ru' ? 'Подсветка одинаковых номеров' : 'Highlight Matching Numbers'}
-                </span>
+                <span className="text-sm font-bold">Highlight Matching Numbers</span>
               </div>
               <input
                 type="checkbox"
@@ -208,7 +193,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               className="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/30 border border-rose-200 dark:border-rose-900 transition-colors flex items-center justify-center gap-2"
             >
               <RotateCcw className="w-4 h-4" />
-              <span>{settings.language === 'ru' ? 'Сбросить весь прогресс' : 'Reset All Progress'}</span>
+              <span>Reset All Progress</span>
             </button>
           </div>
         </div>

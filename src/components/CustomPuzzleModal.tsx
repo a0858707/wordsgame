@@ -55,7 +55,7 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
 
     const cleanQuote = quote.trim().toUpperCase();
     if (!cleanQuote || cleanQuote.length < 5) {
-      setError(language === 'ru' ? 'Введите фразу от 5 символов' : 'Please enter a quote with at least 5 letters');
+      setError('Please enter a secret quote with at least 5 letters');
       return;
     }
 
@@ -66,11 +66,7 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
       const answerText = c.answer.trim().toUpperCase();
 
       if (!clueText || !answerText || answerText.length < 2) {
-        setError(
-          language === 'ru'
-            ? `Заполните подсказку и ответ #${i + 1} (ответ от 2 букв)`
-            : `Please fill clue & answer #${i + 1} (answer at least 2 letters)`
-        );
+        setError(`Please fill clue definition & answer #${i + 1} (answer at least 2 letters)`);
         return;
       }
 
@@ -84,11 +80,11 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
     const customPuzzle: Puzzle = {
       id: `custom_${Date.now()}`,
       levelNumber: 999,
-      title: title.trim() || (language === 'ru' ? 'Свой кроссворд' : 'Custom Puzzle'),
+      title: title.trim() || 'Custom Puzzle',
       category: 'Custom 🎨',
       quote: cleanQuote,
       author: author.trim() || undefined,
-      fact: fact.trim() || (language === 'ru' ? 'Ваш уникальный шифр Crostic успешно решён!' : 'Your custom Crostic puzzle has been deciphered!'),
+      fact: fact.trim() || 'Your custom Crostic puzzle has been successfully deciphered!',
       difficulty: 'medium',
       language,
       clues: validClues,
@@ -112,12 +108,8 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
           <div>
-            <h3 className="font-extrabold text-xl sm:text-2xl">
-              {language === 'ru' ? 'Конструктор уровней' : 'Puzzle Creator'}
-            </h3>
-            <p className="text-xs opacity-60">
-              {language === 'ru' ? 'Создайте свой шифр Crostic' : 'Build your own custom Acrostic'}
-            </p>
+            <h3 className="font-extrabold text-xl sm:text-2xl">Puzzle Creator</h3>
+            <p className="text-xs opacity-60">Build your own custom Acrostic</p>
           </div>
           <button
             onClick={onClose}
@@ -139,14 +131,14 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
           {/* Quote Input */}
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-1.5 opacity-80">
-              {language === 'ru' ? 'Тайная фраза / цитата (Quote) *' : 'Secret Phrase / Quote *'}
+              Secret Phrase / Quote *
             </label>
             <input
               type="text"
               required
               value={quote}
               onChange={(e) => setQuote(e.target.value)}
-              placeholder={language === 'ru' ? 'Например: ДЕЛАЙ КАК БОЖЕНЬКА' : 'E.g.: KEEP CALM AND CODE ON'}
+              placeholder="E.g.: KEEP CALM AND CODE ON"
               className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-800 text-sm font-semibold uppercase focus:ring-2 focus:ring-indigo-500 outline-none"
             />
           </div>
@@ -155,19 +147,19 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider mb-1.5 opacity-80">
-                {language === 'ru' ? 'Название уровня' : 'Puzzle Title'}
+                Puzzle Title
               </label>
               <input
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder={language === 'ru' ? 'Супер шифр' : 'Epic Puzzle'}
+                placeholder="Epic Puzzle"
                 className="w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
               />
             </div>
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider mb-1.5 opacity-80">
-                {language === 'ru' ? 'Автор цитаты (необязательно)' : 'Author (optional)'}
+                Author (optional)
               </label>
               <input
                 type="text"
@@ -183,7 +175,7 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
           <div>
             <div className="flex items-center justify-between mb-2">
               <label className="text-xs font-bold uppercase tracking-wider opacity-80">
-                {language === 'ru' ? 'Вопросы и ответы (Слова)' : 'Clues & Word Answers'}
+                Clues & Word Answers
               </label>
               <button
                 type="button"
@@ -192,7 +184,7 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
                 className="text-xs font-bold text-indigo-600 dark:text-cyan-400 flex items-center gap-1 hover:underline disabled:opacity-50"
               >
                 <Plus className="w-3.5 h-3.5" />
-                <span>{language === 'ru' ? 'Добавить слово' : 'Add Clue'}</span>
+                <span>Add Clue</span>
               </button>
             </div>
 
@@ -206,7 +198,7 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
                   <input
                     type="text"
                     required
-                    placeholder={language === 'ru' ? 'Вопрос / Определение' : 'Clue definition'}
+                    placeholder="Clue definition"
                     value={c.clue}
                     onChange={(e) => handleClueChange(idx, 'clue', e.target.value)}
                     className="flex-1 px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-xs sm:text-sm outline-none"
@@ -214,7 +206,7 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
                   <input
                     type="text"
                     required
-                    placeholder={language === 'ru' ? 'ОТВЕТ' : 'ANSWER'}
+                    placeholder="ANSWER"
                     value={c.answer}
                     onChange={(e) => handleClueChange(idx, 'answer', e.target.value)}
                     className="w-24 sm:w-28 px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-xs sm:text-sm font-bold uppercase tracking-wider outline-none text-center"
@@ -236,13 +228,13 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
           {/* Interesting Fact */}
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-1.5 opacity-80">
-              {language === 'ru' ? 'Интересный факт после победы' : 'Victory Trivia / Fact'}
+              Victory Trivia / Fact
             </label>
             <textarea
               rows={2}
               value={fact}
               onChange={(e) => setFact(e.target.value)}
-              placeholder={language === 'ru' ? 'Любопытный факт про эту фразу...' : 'Fun fact or background about this quote...'}
+              placeholder="Fun fact or background about this quote..."
               className="w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
             />
           </div>
@@ -254,7 +246,7 @@ export const CustomPuzzleModal: React.FC<CustomPuzzleModalProps> = ({
               className="w-full py-3.5 px-6 rounded-2xl font-black text-base bg-gradient-to-r from-emerald-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/25 hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-5 h-5" />
-              <span>{language === 'ru' ? 'Создать и играть' : 'Generate & Play'}</span>
+              <span>Generate & Play</span>
             </button>
           </div>
         </form>

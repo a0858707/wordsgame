@@ -1,6 +1,8 @@
-// Web Audio API Sound Synthesizer for Crostic Game
+import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics';
+
+// Web Audio API Sound Synthesizer & Haptic Engine for Crostic Game
 // Provides crisp, zero-latency micro-interactions and celebration audio
-// Optimized for mobile devices (iOS Safari & Android Chrome)
+// Optimized for iOS Taptic Engine & Web Audio API
 
 class SoundEngine {
   private ctx: AudioContext | null = null;
@@ -242,15 +244,71 @@ class SoundEngine {
     }
   }
 
-  // Trigger mobile haptic feedback if enabled (Android supported; iOS blocks navigator.vibrate)
-  public vibrate(pattern: number | number[] = 30) {
+  // Trigger native iOS Taptic Engine impact
+  public async hapticTap(style: 'light' | 'medium' | 'heavy' = 'light') {
     if (!this.haptics) return;
+    try {
+      const impactStyle =
+        style === 'heavy'
+          ? ImpactStyle.Heavy
+          : style === 'medium'
+          ? ImpactStyle.Medium
+          : ImpactStyle.Light;
+      await Haptics.impact({ style: impactStyle });
+    } catch {
+      // Fallback to web vibration if capacitor is unavailable
+      this.vibrateWeb(10);
+    }
+  }
+
+  // Trigger success haptic notification (word solved / level complete)
+  public async hapticSuccess() {
+    if (!this.haptics) return;
+    try {
+      await Haptics.notification({ type: NotificationType.Success });
+    } catch {
+      this.vibrateWeb([25, 40, 25]);
+    }
+  }
+
+  // Trigger error buzz haptic
+  public async hapticError() {
+    if (!this.haptics) return;
+    try {
+      await Haptics.notification({ type: NotificationType.Error });
+    } catch {
+      this.vibrateWeb([40, 30, 40]);
+    }
+  }
+
+  // Trigger subtle selection haptic when navigating tiles
+  public async hapticSelection() {
+    if (!this.haptics) return;
+    try {
+      await Haptics.selectionChanged();
+    } catch {
+      // ignore
+    }
+  }
+
+  // Web vibration fallback for non-native browsers
+  private vibrateWeb(pattern: number | number[]) {
     if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
       try {
         navigator.vibrate(pattern);
       } catch {
         // ignore
       }
+    }
+  }
+
+  // Legacy vibrate compatibility wrapper
+  public vibrate(pattern: number | number[] = 20) {
+    if (!this.haptics) return;
+    if (Array.isArray(pattern)) {
+      this.hapticSuccess();
+    } else {
+      this.hapticTap(pattern > 25 ? 'medium' : 'light');
     }
   }
 }

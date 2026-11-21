@@ -22,16 +22,16 @@
 
 /* Safe area padding utilities for iPhone notch, Dynamic Island, and bottom home bar */
 .pb-safe {
-  padding-bottom: max(env(safe-area-inset-bottom, 0px), 10px);
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
 }
 .pt-safe {
-  padding-top: max(env(safe-area-inset-top, 0px), 8px);
+  padding-top: calc(env(safe-area-inset-top, 0px) + 8px);
 }
 .pl-safe {
-  padding-left: env(safe-area-inset-left, 0px);
+  padding-left: max(env(safe-area-inset-left, 0px), 12px);
 }
 .pr-safe {
-  padding-right: env(safe-area-inset-right, 0px);
+  padding-right: max(env(safe-area-inset-right, 0px), 12px);
 }
 
 /* Notebook Spiral and Paper texture styles matching mockup */

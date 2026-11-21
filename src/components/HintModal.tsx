@@ -47,12 +47,8 @@ export const HintModal: React.FC<HintModalProps> = ({
               <Lightbulb className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-extrabold text-lg sm:text-xl">
-                {language === 'ru' ? 'Подсказки' : 'Game Hints'}
-              </h3>
-              <p className="text-xs opacity-60">
-                {language === 'ru' ? 'Баланс:' : 'Balance:'} {coins} 🪙
-              </p>
+              <h3 className="font-extrabold text-lg sm:text-xl">Game Hints</h3>
+              <p className="text-xs opacity-60">Balance: {coins} 🪙</p>
             </div>
           </div>
           <button
@@ -82,14 +78,8 @@ export const HintModal: React.FC<HintModalProps> = ({
                 <Lightbulb className="w-5 h-5" />
               </div>
               <div>
-                <div className="font-bold text-sm sm:text-base">
-                  {language === 'ru' ? 'Открыть букву' : 'Reveal Letter'}
-                </div>
-                <div className="text-xs opacity-65">
-                  {language === 'ru'
-                    ? 'Заполняет эту букву везде в шифре'
-                    : 'Uncovers letter in all matching tiles'}
-                </div>
+                <div className="font-bold text-sm sm:text-base">Reveal Letter</div>
+                <div className="text-xs opacity-65">Uncovers this letter in all matching tiles</div>
               </div>
             </div>
             <div className="px-2.5 py-1 rounded-full text-xs font-black bg-amber-500 text-white shrink-0 ml-2">
@@ -114,14 +104,8 @@ export const HintModal: React.FC<HintModalProps> = ({
                 <Search className="w-5 h-5" />
               </div>
               <div>
-                <div className="font-bold text-sm sm:text-base">
-                  {language === 'ru' ? 'Открыть всё слово' : 'Solve Clue Word'}
-                </div>
-                <div className="text-xs opacity-65">
-                  {language === 'ru'
-                    ? 'Полностью раскрывает выбранное слово'
-                    : 'Solves the current clue word'}
-                </div>
+                <div className="font-bold text-sm sm:text-base">Solve Clue Word</div>
+                <div className="text-xs opacity-65">Solves the entire current clue word</div>
               </div>
             </div>
             <div className="px-2.5 py-1 rounded-full text-xs font-black bg-indigo-600 text-white shrink-0 ml-2">
@@ -146,14 +130,8 @@ export const HintModal: React.FC<HintModalProps> = ({
                 <Eraser className="w-5 h-5" />
               </div>
               <div>
-                <div className="font-bold text-sm sm:text-base">
-                  {language === 'ru' ? 'Очистить ошибки' : 'Clear Wrong Letters'}
-                </div>
-                <div className="text-xs opacity-65">
-                  {language === 'ru'
-                    ? 'Удаляет все неверные буквы'
-                    : 'Erases all incorrect guesses'}
-                </div>
+                <div className="font-bold text-sm sm:text-base">Clear Wrong Letters</div>
+                <div className="text-xs opacity-65">Erases all incorrect guesses</div>
               </div>
             </div>
             <div className="px-2.5 py-1 rounded-full text-xs font-black bg-rose-500 text-white shrink-0 ml-2">
@@ -173,11 +151,9 @@ export const HintModal: React.FC<HintModalProps> = ({
         >
           <div className="flex items-center gap-2 text-xs sm:text-sm font-bold">
             <Gift className="w-5 h-5 text-amber-500 animate-bounce" />
-            <span>{language === 'ru' ? 'Подарок: +30 монет бесплатно!' : 'Free Bonus: +30 Coins!'}</span>
+            <span>Daily Bonus: +30 Free Coins!</span>
           </div>
-          <span className="text-xs font-extrabold underline">
-            {language === 'ru' ? 'Забрать' : 'Claim'}
-          </span>
+          <span className="text-xs font-extrabold underline">Claim</span>
         </div>
       </div>
     </div>

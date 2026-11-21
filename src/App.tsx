@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import confetti from 'canvas-confetti';
 import { Header } from './components/Header';
 import { QuoteBoard } from './components/QuoteBoard';
 import { CluesList } from './components/CluesList';
@@ -41,7 +42,7 @@ export const App: React.FC = () => {
     const savedId = loadActiveLevelId();
     if (savedId) {
       const found = DEFAULT_PUZZLES.find((p) => p.id === savedId);
-      if (found) return found;
+      if (found && found.language === settings.language) return found;
     }
     // Default to Level 1 in the saved language
     return DEFAULT_PUZZLES.find((p) => p.language === settings.language) || DEFAULT_PUZZLES[0];
@@ -170,7 +171,7 @@ export const App: React.FC = () => {
     if (clueId) setActiveClueId(clueId);
     if (index !== undefined) setActiveTileIndex(index);
     sound.playTap();
-    sound.vibrate(10);
+    sound.hapticSelection();
   };
 
   // Focus a specific tile in a clue
@@ -180,7 +181,7 @@ export const App: React.FC = () => {
     setActiveNumber(num);
     setActiveTargetType('clue');
     sound.playTap();
-    sound.vibrate(10);
+    sound.hapticSelection();
   };
 
   // Move to next tile
@@ -280,10 +281,11 @@ export const App: React.FC = () => {
       // Play audio feedback
       if (isCorrectLetter) {
         sound.playLetterChime(activeNumber);
+        sound.hapticTap('medium');
       } else {
         sound.playTap();
+        sound.hapticTap('light');
       }
-      sound.vibrate(12);
 
       // Check if the current clue was completed
       if (activeClueId) {
@@ -294,7 +296,16 @@ export const App: React.FC = () => {
           if (!wasSolvedBefore && isSolvedNow) {
             setTimeout(() => {
               sound.playWordSolved();
-              sound.vibrate([20, 40, 20]);
+              sound.hapticSuccess();
+              confetti({
+                particleCount: 35,
+                spread: 60,
+                origin: { y: 0.6 },
+                colors: ['#6366f1', '#ec4899', '#f59e0b', '#10b981'],
+                ticks: 100,
+                gravity: 1.2,
+                scalar: 0.8,
+              });
             }, 80);
           }
         }
@@ -304,6 +315,7 @@ export const App: React.FC = () => {
       const quoteSolved = isQuoteCompleted(currentPuzzle.quote, nextGuesses, cipher);
       if (quoteSolved && !isWon) {
         setIsWon(true);
+        sound.hapticSuccess();
 
         // Calculate stars
         let earnedStars = 3;
@@ -379,7 +391,7 @@ export const App: React.FC = () => {
     if (isWon || activeNumber === null) return;
 
     sound.playTap();
-    sound.vibrate(10);
+    sound.hapticTap('light');
 
     if (guesses[activeNumber]) {
       // Clear current letter
@@ -564,7 +576,7 @@ export const App: React.FC = () => {
 
   // Reset all game progress
   const handleResetProgress = () => {
-    if (window.confirm(settings.language === 'ru' ? 'Вы уверены, что хотите сбросить прогресс?' : 'Are you sure you want to reset all progress?')) {
+    if (window.confirm('Are you sure you want to reset all game progress?')) {
       localStorage.clear();
       setProgressMap({});
       setCoins(60);

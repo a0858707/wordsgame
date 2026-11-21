@@ -46,12 +46,8 @@ export const LevelSelectModal: React.FC<LevelSelectModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
           <div>
-            <h3 className="font-extrabold text-xl sm:text-2xl">
-              {language === 'ru' ? 'Выбор уровня' : 'Select Level'}
-            </h3>
-            <p className="text-xs opacity-60">
-              {language === 'ru' ? 'Уровни и шифры Crostic' : 'Crostic Puzzles Library'}
-            </p>
+            <h3 className="font-extrabold text-xl sm:text-2xl">Select Level</h3>
+            <p className="text-xs opacity-60">Crostic Puzzles Library</p>
           </div>
           <button
             onClick={onClose}
@@ -81,7 +77,7 @@ export const LevelSelectModal: React.FC<LevelSelectModalProps> = ({
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'
             }`}
           >
-            🇷🇺 Русские уровни
+            🇷🇺 Russian Pack
           </button>
         </div>
 
@@ -135,7 +131,7 @@ export const LevelSelectModal: React.FC<LevelSelectModalProps> = ({
                       )}
                     </div>
                     <div className="text-xs opacity-60 mt-0.5">
-                      {p.category} • {p.clues.length} {language === 'ru' ? 'слов' : 'words'}
+                      {p.category} • {p.clues.length} words
                     </div>
                   </div>
                 </div>
